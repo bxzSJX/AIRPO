@@ -72,12 +72,31 @@ pip install torch torchvision streamlit streamlit-drawable-canvas numpy pandas o
 
 ```
 
-2. Ensure trained model files are available in the project root directory:
+2. Prepare and Train Models
 
-* `cnn_model.pth`
-* `advancedcnn_model.pth`
-* `logreg_model.pkl`
-* `logreg_hog.pkl`
+Ensure that trained model files are available in the project root directory.
+If pre-trained model files are not available, you can train all models from scratch using the following scripts.
+Trained model files will be saved automatically after training.
+
+(A) Train Models
+python train_logreg.py
+python train_logreg_hog.py
+python train_cnn.py
+python train_advancedcnn.py
+
+(B) Evaluate Models
+python evaluate_logreg_pixels.py
+python evaluate_logreg_hog.py
+python evaluate_cnn.py
+python evaluate_cnn_report.py
+python evaluate_advancedcnn.py
+
+(C) Confusion Matrix and Model Comparison
+python confusion_matrix.py
+python evaluate_advancedcnn_confusion.py
+python generate_model_comparison.py
+
+
 
 3. Launch the application:
 
