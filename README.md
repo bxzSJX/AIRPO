@@ -127,7 +127,7 @@ This allows a comprehensive comparison of classical and deep learning approaches
 * Streamlit
 * NumPy, Pandas
 
-## Note:
+## Note
 Ensuere your browser theme must be light-colored; otherwise, it will conflict with Streamlit's theme, making the text illegible.
 
 
