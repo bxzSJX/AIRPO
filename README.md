@@ -8,7 +8,6 @@ user interaction, including drawing characters on a canvas or uploading images.
 
 The project demonstrates a complete machine learning pipeline, including data preprocessing, model training, evaluation, and deployment in an interactive application.
 
----
 
 ## Dataset
 
@@ -18,7 +17,6 @@ The project demonstrates a complete machine learning pipeline, including data pr
 
 All input images are preprocessed to match the official EMNIST format, including binarization, bounding-box cropping, resizing, padding, and orientation correction.
 
----
 
 ## Models Implemented
 
@@ -38,7 +36,6 @@ The following models are implemented and compared:
 
 These models form a progressive comparison chain from traditional methods to deep learning approaches.
 
----
 
 ## Training Details
 
@@ -47,11 +44,10 @@ These models form a progressive comparison chain from traditional methods to dee
 * **Training epochs:**
 
   * MyCNN: 10 epochs
-  * AdvancedCNN: 12 epochs
+  * AdvancedCNN: 10 epochs
 
-The number of epochs was selected based on validation performance. Experiments showed that model accuracy converged around 10–12 epochs, and additional training did not lead to consistent improvements.
+The number of epochs was selected based on validation performance. Experiments showed that model accuracy converged around 10 epochs, and additional training did not lead to consistent improvements.
 
----
 
 ## Preprocessing Pipeline
 
@@ -66,7 +62,6 @@ The preprocessing steps are consistent across training and inference:
 
 This ensures compatibility between user input images and the EMNIST dataset distribution.
 
----
 
 ## How to Run
 
@@ -92,7 +87,6 @@ streamlit run app.py
 
 4. Open the provided local URL in a web browser and start drawing or uploading handwritten characters.
 
----
 
 ## Model Evaluation
 
@@ -105,10 +99,6 @@ The application includes a model evaluation mode that displays:
 
 This allows a comprehensive comparison of classical and deep learning approaches.
 
-
-
----
-
 ## Technologies Used
 
 * Python
@@ -118,6 +108,5 @@ This allows a comprehensive comparison of classical and deep learning approaches
 * Streamlit
 * NumPy, Pandas
 
----
 
 
