@@ -3,10 +3,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class AdvancedCNN(nn.Module):
-    """
-    结构：[Conv-BN-ReLU] * 2 -> MaxPool (28->14) -> [Conv-BN-ReLU] * 2 -> MaxPool (14->7) -> [Conv-BN-ReLU] * 2 -> MaxPool (7->3) -> FC
-    """
-
     def __init__(self, num_classes=47):
         super(AdvancedCNN, self).__init__()
 
@@ -30,7 +26,6 @@ class AdvancedCNN(nn.Module):
         self.bn6 = nn.BatchNorm2d(128)
 
         # FC Layer
-        # 展平后维度: 128通道 * 3 * 3
         self.fc1 = nn.Linear(128 * 3 * 3, 256)
         self.dropout = nn.Dropout(0.5)
         self.fc2 = nn.Linear(256, num_classes)

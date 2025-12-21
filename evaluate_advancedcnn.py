@@ -1,4 +1,3 @@
-# evaluate_advancedcnn.py
 import torch
 from torch.utils.data import DataLoader
 from dataset import load_emnist
@@ -28,7 +27,6 @@ def main():
     acc = correct / total
     print("AdvancedCNN Test Accuracy:", acc)
 
-    # ⭐ 保存 accuracy
     with open("advancedcnn_test_accuracy.txt", "w") as f:
         f.write(str(acc))
 

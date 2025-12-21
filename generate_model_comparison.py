@@ -1,4 +1,3 @@
-# generate_model_comparison.py
 import matplotlib.pyplot as plt
 import re
 import os
@@ -13,9 +12,8 @@ def read_acc(path):
     if m:
         return float(m.group(1))
     else:
-        return float(first)  # 对 CNN / AdvancedCNN 的 txt 支持
+        return float(first)
 
-# 读取 4 个模型的准确率
 acc_lr = read_acc("logreg_pixels_classification_report.txt")
 acc_hog = read_acc("logreg_hog_classification_report.txt")
 acc_cnn = read_acc("cnn_test_accuracy.txt")

@@ -3,7 +3,7 @@
 ## Project Overview
 
 This project implements a handwritten digit and letter recognition system based on the EMNIST Balanced dataset. The system supports recognition of handwritten digits (0–9) 
-and letters (A–Z, a–k) using both classical machine learning methods and deep learning models. A Streamlit-based graphical user interface (GUI) is provided for real-time 
+and letters (A–Z) using both classical machine learning methods and deep learning models. A Streamlit-based graphical user interface (GUI) is provided for real-time 
 user interaction, including drawing characters on a canvas or uploading images.
 
 The project demonstrates a complete machine learning pipeline, including data preprocessing, model training, evaluation, and deployment in an interactive application.
@@ -13,7 +13,7 @@ The project demonstrates a complete machine learning pipeline, including data pr
 ## Dataset
 
 * **Dataset:** EMNIST Balanced
-* **Number of classes:** 47 (digits 0–9, uppercase A–Z, selected lowercase letters a–k)
+* **Number of classes:** 47 (digits and letters)
 * **Image size:** 28 × 28 grayscale
 
 All input images are preprocessed to match the official EMNIST format, including binarization, bounding-box cropping, resizing, padding, and orientation correction.
@@ -73,7 +73,8 @@ This ensures compatibility between user input images and the EMNIST dataset dist
 1. Install dependencies:
 
 ```bash
-pip install -r requirements.txt
+pip install torch torchvision streamlit streamlit-drawable-canvas numpy pandas opencv-python Pillow scikit-learn scikit-image joblib
+
 ```
 
 2. Ensure trained model files are available in the project root directory:
@@ -104,13 +105,7 @@ The application includes a model evaluation mode that displays:
 
 This allows a comprehensive comparison of classical and deep learning approaches.
 
----
 
-## Notes and Observations
-
-* Logistic Regression models show strong robustness for characters with stable global structures (e.g., M and P).
-* CNN-based models achieve higher overall accuracy but may confuse structurally similar characters due to spatial normalization and pooling effects.
-* This behavior highlights the trade-off between global feature preservation and local pattern learning.
 
 ---
 

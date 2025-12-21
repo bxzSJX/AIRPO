@@ -30,7 +30,6 @@ with torch.no_grad():
         all_preds.extend(predicted.cpu().numpy())
         all_labels.extend(labels.cpu().numpy())
 
-# 混淆矩阵
 cm = confusion_matrix(all_labels, all_preds)
 
 plt.figure(figsize=(14, 12))

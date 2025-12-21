@@ -1,17 +1,10 @@
-# models/logreg_hog.py
-
 import numpy as np
 import joblib
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
-
-from skimage.feature import hog  # HOG 特征提取
+from skimage.feature import hog
 
 def extract_hog_features(images):
-    """
-    images: torch tensor, shape (N, 28, 28)
-    return numpy array: (N, feature_dim)
-    """
     hog_features = []
     for img in images:
         img_np = img.numpy()
@@ -28,10 +21,6 @@ def extract_hog_features(images):
 
 
 def train_logreg_hog(train_dataset, test_dataset):
-    """
-    使用 HOG 特征训练 Logistic Regression
-    """
-
     print("Extracting HOG features (train)...")
     X_train = extract_hog_features(train_dataset.data)
     y_train = train_dataset.targets.numpy()
@@ -54,7 +43,6 @@ def train_logreg_hog(train_dataset, test_dataset):
     acc = accuracy_score(y_test, y_pred)
     print(f"HOG + Logistic Regression Accuracy: {acc:.4f}")
 
-    # 保存模型给 GUI 用
     joblib.dump(clf, "logreg_hog.pkl")
 
     return clf, X_test, y_test, y_pred

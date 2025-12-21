@@ -25,7 +25,6 @@ def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
 
-    # ✅ 重点：开启 augment=True
     train_dataset, test_dataset = load_emnist(augment=True)
 
     train_loader = DataLoader(train_dataset, batch_size=128, shuffle=True, num_workers=0)
@@ -33,16 +32,15 @@ def main():
 
     model = AdvancedCNN(num_classes=47).to(device)
 
-    # 优化器与损失函数
     optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
     criterion = nn.CrossEntropyLoss()
 
-    EPOCHS = 12 # 建议训练 10 轮以上
+    EPOCHS = 10
     train_acc_list = []
     test_acc_list = []
     loss_list = []
 
-    print("开始训练...")
+    print("Start training...")
     for epoch in range(EPOCHS):
         model.train()
         correct = 0
@@ -75,11 +73,9 @@ def main():
         print(
             f"Epoch {epoch + 1}/{EPOCHS} | Loss: {avg_loss:.4f} | Train Acc: {train_acc:.4f} | Test Acc: {test_acc:.4f}")
 
-    # 保存模型
     torch.save(model.state_dict(), "advancedcnn_model.pth")
-    print("✅ 模型已保存为 advancedcnn_model.pth")
+    print("The model has been saved as advancedcnn_model.pth")
 
-    # 保存准确率记录
     with open("advancedcnn_test_accuracy.txt", "w") as f:
         f.write(str(test_acc_list[-1]))
 

@@ -61,7 +61,7 @@ for epoch in range(10):
 
 torch.save(model.state_dict(), "cnn_model.pth")
 
-# ---- Learning Curve ----
+#Learning Curve
 plt.figure(figsize=(10,4))
 plt.plot(train_acc_list, label="Train Accuracy")
 plt.plot(test_acc_list, label="Test Accuracy")

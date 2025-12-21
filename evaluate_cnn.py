@@ -1,4 +1,3 @@
-# evaluate_cnn.py
 import torch
 from torch.utils.data import DataLoader
 from models.my_cnn import MyCNN
@@ -28,7 +27,6 @@ def main():
     acc = correct / total
     print("CNN Test Accuracy:", acc)
 
-    # ⭐ 保存 accuracy
     with open("cnn_test_accuracy.txt", "w") as f:
         f.write(str(acc))
 
